@@ -31,7 +31,7 @@ jobs:
           release_name="App-$tag-${{ matrix.target }}"
 
           # Build everything
-          dotnet publish MailTester.WinForms.Core/MailTester.WinForms.Core.csproj --no-self-contained /p:PublishSingleFile=true --framework netcoreapp3.1 --runtime "${{ matrix.target }}" -c Release -o "$release_name"
+          dotnet publish MailTester.WinForms.Core/MailTester.WinForms.Core.csproj --no-self-contained //p:PublishSingleFile=true --framework netcoreapp3.1 --runtime "${{ matrix.target }}" -c Release -o "$release_name"
 
           # Pack files
           7z a -tzip "${release_name}.zip" "./${release_name}/*"
