@@ -21,7 +21,5 @@ jobs:
       run: dotnet restore
     - name: Build .NET Core
       run: cd MailTester.WinForms.Core && dotnet build --configuration Release --no-restore
-    - name: Build .NET Framework
-      run: cd MailTester.WinForms.Framework && dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
